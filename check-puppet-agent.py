@@ -106,8 +106,8 @@ for ip in os.listdir(base_path):
     local_hostname = ""
   else:
     with open("%s/%s" % (base_path, ip,)) as f2:
-      print ip, local_hostname
       run_status, agent_disabled, ro_mounts, stuck_puppet, local_hostname  = f2.read().strip().split("\n")
+      print ip, local_hostname
 
       if run_status.startswith("nofail"):
          puppet_run = ""
